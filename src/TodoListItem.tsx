@@ -1,4 +1,5 @@
 import React from 'react';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 interface Props {
 	todo: Todo;
@@ -7,20 +8,22 @@ interface Props {
 
 export const TodoListItem: React.FC<Props> = ({ todo, toggleTodo }) => {
 	return (
-		<li>
-			<label
-				style={{
-					textDecoration: todo.complete ? 'line-through' : undefined,
-				}}>
-				<input
-					type='checkbox'
-					checked={todo.complete}
+		<>
+			<ListGroup defaultActiveKey='#link1'>
+				<ListGroup.Item
+                    
+					style={{
+						textDecoration: todo.complete
+							? 'line-through'
+							: undefined,
+                        cursor: 'pointer'
+					}}
 					onClick={() => {
 						toggleTodo(todo);
-					}}
-				/>{' '}
-				{todo.text}
-			</label>
-		</li>
+					}}>
+					{todo.text}
+				</ListGroup.Item>
+			</ListGroup>
+		</>
 	);
 };

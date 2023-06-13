@@ -8,7 +8,7 @@ const initialTodos: Todo[] = [
 		complete: false,
 	},
 	{
-		text: 'Wash up',
+		text: 'Learn Typescript',
 		complete: true,
 	},
 ];
@@ -29,16 +29,19 @@ function App() {
 		setTodos(newTodos);
 	};
 
-    const addTodo: AddTodo = (text: string) => {
-        const newTodo = { text, complete: false };
-        setTodos([...todos, newTodo]);
-    };
+	const addTodo: AddTodo = (text: string) => {
+		const newTodo = { text, complete: false };
+		setTodos([...todos, newTodo]);
+	};
 
 	return (
-		<>
-			<TodoList todos={todos} toggleTodo={toggleTodo} />
-			<AddTodoForm addTodo={addTodo}/>
-		</>
+		<div style={{display: 'flex', justifyContent: 'center', paddingTop: '150px'}}>
+            <div>
+                <h2 style={{paddingBottom: '15px'}}>Todo List</h2>
+                <TodoList todos={todos} toggleTodo={toggleTodo} />
+                <AddTodoForm addTodo={addTodo} />
+            </div>
+        </div>
 	);
 }
 

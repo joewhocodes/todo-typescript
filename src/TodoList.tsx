@@ -8,7 +8,7 @@ interface Props {
 
 export const TodoList: React.FC<Props> = ({ todos, toggleTodo }) => {
 	return (
-		<ul>
+		<ul style={{padding: 0}}>
 			{todos.map(todo => (
 				<TodoListItem
 					key={todo.text}
