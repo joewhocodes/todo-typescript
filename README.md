@@ -1,8 +1,10 @@
 # Todo TypeScript
 
+A simple ToDo app built with TypeScript
+
 ## Usage
 
 ```sh
 npm install
-npm run start
+npm start
 ```
